@@ -1,0 +1,29 @@
+ var i = 0;
+
+            $('#manual_leave_add_btn').click(function () {
+                //alert('ok');
+                i++;
+                var result = 0;
+
+                $('#leave_area').append('<div class="leave_row" style="padding: 5px 0;width: 100%;display: inline-block;" id="removeDiv' + i + '"><div class="col-md-3 col-sm-2 col-xs-6">\n' +
+                    '                                </div>\n' +
+                    '                                <div class="col-md-2 col-sm-2 col-xs-6">\n' +
+                    '                                        <input type="number" name="total_leave[]"  id="total_leave' + i + '" class="form-control" placeholder="Total Leave">\n' +
+                    '                                </div>\n' +
+                    '                                <div class="col-md-2 col-sm-2 col-xs-6">\n' +
+                    '                                        <input type="text" name="start_date[]"  id="start_date_' + i + '" class="form-control tcalInput" placeholder="Start Date">\n' +
+                    '                                </div>\n' +
+                    '                                <div class="col-md-2 col-sm-2 col-xs-6">\n' +
+                    '                                        <input type="text" name="end_date[]" id="end_date_' + i + '" class="form-control tcalInput" placeholder="End Date">\n' +
+                    '                                </div>\n' +
+                    '                                <div class="col-md-2 col-sm-2 col-xs-4">\n' +
+                    '                                        <input type="text" name="remain_leave[]" id="remain_leave_' + i + '" class="form-control" placeholder="Remain Leave" disabled>\n' +
+                    '                                    </div>\n' +
+                    '                                <div class="col-md-1 col-sm-1 col-xs-2"><div name="add" id="' + i + '" class="btn btn-danger form-control btn_remove">X</div></div></div>')
+            });
+
+            $(document).on('click', '.btn_remove', function () {
+                var button_id = $(this).attr("id");
+
+                $('#removeDiv' + button_id + '').remove();
+            });
